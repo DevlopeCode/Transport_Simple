@@ -1,11 +1,35 @@
-import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
-import LinearGradient from "react-native-linear-gradient";
-import { vs } from "react-native-size-matters";
-const CButton = ({colors="#868BFE",title="Submit",pading=10})=>{
+import React from 'react';
+import {Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {s, vs} from 'react-native-size-matters';
+export const CButton = ({
+  colors = '#868BFE',
+  title = 'Create',
+  pading = 10,
+}) => {
   return (
-    <TouchableOpacity style={{height:vs(50),backgroundColor:colors,marginHorizontal:20}}>
-     <Text>{title}</Text>
+    <TouchableOpacity
+      activeOpacity={0.8}
+      style={[style.btnContainer, {backgroundColor: colors}]}>
+      <Text
+        style={style.btnText}>
+        {title}
+      </Text>
     </TouchableOpacity>
-  )
-}
+  );
+};
+
+const style = StyleSheet.create({
+  btnContainer: {
+    height: vs(50),
+
+    marginHorizontal: 30,
+    borderRadius: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  btnText:
+  { 
+    color: '#FFFFFF', 
+    fontFamily: 'Poppins-Bold', 
+    fontSize: s(25)}
+});
